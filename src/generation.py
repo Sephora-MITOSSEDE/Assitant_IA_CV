@@ -15,19 +15,23 @@ from src.recherche import rechercher, ResultatRecherche
 RACINE_PROJET = Path(__file__).resolve().parents[1]
 load_dotenv(RACINE_PROJET / ".env")
 
-
-def _get_openai_key() -> str | None:
-    try:
-        return st.secrets["OPENAI_API_KEY"]   # Cloud / secrets.toml
-    except Exception:
-        return os.getenv("OPENAI_API_KEY")    # Local .env / env var
-
-
-OPENAI_API_KEY = _get_openai_key()
-
 MODELE_LLM = "gpt-4o-mini"
 
 
+def _get_openai_key() -> str | None:
+    # 1) Environment variable (Streamlit Cloud Advanced settings / local env)
+    key = os.getenv("OPENAI_API_KEY")
+    if key:
+        return key
+
+    # 2) Streamlit secrets (Streamlit Cloud Secrets / secrets.toml)
+    try:
+        return st.secrets["OPENAI_API_KEY"]
+    except Exception:
+        return None
+
+
+OPENAI_API_KEY = _get_openai_key()
 
 
 def construire_contexte(passages: List[ResultatRecherche]) -> str:
@@ -100,10 +104,10 @@ def generer_reponse(question: str) -> str:
 
 if __name__ == "__main__":
     tests = [
-    "Quelle est son parcours académique ?",
-    "Qu’a-t-elle fait à l’INSEE ?",
-    "Quels sont ses projets principaux ?",
-]
+        "Quelle est son parcours académique ?",
+        "Qu’a-t-elle fait à l’INSEE ?",
+        "Quels sont ses projets principaux ?",
+    ]
     for q in tests:
         print("\n=== QUESTION ===")
         print(q)
