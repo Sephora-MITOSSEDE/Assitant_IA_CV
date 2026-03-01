@@ -12,3 +12,4 @@ torch
 faiss-cpu
 rank-bm25
 tiktoken
+python-frontmatter
