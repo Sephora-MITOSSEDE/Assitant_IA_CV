@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import List
 from pathlib import Path
+import os
+import streamlit as st
 
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
@@ -9,12 +11,23 @@ from langchain_core.messages import SystemMessage, HumanMessage
 
 from src.recherche import rechercher, ResultatRecherche
 
-
-# Chargement de .env
+# ✅ charge .env en local (sur Streamlit Cloud ça ne gêne pas)
 RACINE_PROJET = Path(__file__).resolve().parents[1]
 load_dotenv(RACINE_PROJET / ".env")
 
+
+def _get_openai_key() -> str | None:
+    try:
+        return st.secrets["OPENAI_API_KEY"]   # Cloud / secrets.toml
+    except Exception:
+        return os.getenv("OPENAI_API_KEY")    # Local .env / env var
+
+
+OPENAI_API_KEY = _get_openai_key()
+
 MODELE_LLM = "gpt-4o-mini"
+
+
 
 
 def construire_contexte(passages: List[ResultatRecherche]) -> str:
@@ -30,20 +43,27 @@ def construire_contexte(passages: List[ResultatRecherche]) -> str:
 
 def generer_reponse(question: str) -> str:
     passages = rechercher(
-    question,
-    k_final=4,
-    candidates_dense=40,
-    candidates_sparse=40,
-    rrf_top_n=30,
-    rerank_top_n=12,
-)
+        question,
+        k_final=4,
+        candidates_dense=40,
+        candidates_sparse=40,
+        rrf_top_n=30,
+        rerank_top_n=12,
+    )
 
     if not passages:
         return "Je ne trouve pas d'information pertinente dans les documents."
 
     contexte = construire_contexte(passages)
 
-    llm = ChatOpenAI(model=MODELE_LLM, temperature=0)
+    if not OPENAI_API_KEY:
+        return "Clé OpenAI manquante : définis OPENAI_API_KEY dans .env (local) ou dans Secrets (Streamlit Cloud)."
+
+    llm = ChatOpenAI(
+        model=MODELE_LLM,
+        temperature=0,
+        api_key=OPENAI_API_KEY,
+    )
 
     system_prompt = (
         "Tu es un assistant professionnel qui répond au sujet de Séphora MITOSSEDE.\n"
@@ -70,7 +90,11 @@ def generer_reponse(question: str) -> str:
         "- Termine par 1 phrase courte si besoin (ex: impact / objectif), sans inventer.\n"
     )
 
-    resp = llm.invoke([SystemMessage(content=system_prompt), HumanMessage(content=human_prompt)])
+    resp = llm.invoke([
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=human_prompt),
+    ])
+
     return resp.content
 
 
