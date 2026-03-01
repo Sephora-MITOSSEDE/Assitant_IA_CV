@@ -10,10 +10,7 @@ from dotenv import load_dotenv
 from src.generation import generer_reponse
 from src.recherche import rechercher, ResultatRecherche
 
-try:
-    st.write("Secrets visibles:", list(st.secrets.keys()))
-except Exception:
-    st.write("Secrets visibles: []")
+
 # ----------------------------
 # Config
 # ----------------------------
