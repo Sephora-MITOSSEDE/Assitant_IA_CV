@@ -1,5 +1,3 @@
----
-
 # SephBot — Assistant IA CV (RAG Hybride)
 
 Application déployée :  
