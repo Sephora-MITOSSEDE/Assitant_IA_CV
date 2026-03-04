@@ -17,15 +17,24 @@ competences_cles: Machine Learning, NLP, Déploiement API
 
 ---
 
-## Prédiction du churn client
-**Pitch :** Modèle prédictif pour identifier les risques de résiliation business.
-**Objectif :** Anticiper le départ des clients pour prioriser les actions de rétention.
+## Customer Churn Decision Engine
+**Pitch :** Système d’aide à la décision basé sur le machine learning pour identifier les clients à risque et optimiser les campagnes de rétention.
+
+**Objectif :** Prédire le churn et prioriser les actions commerciales en maximisant le retour sur investissement des campagnes de fidélisation.
+
 **Approche :**
-- Comparaison de modèles : Régression logistique, Random Forest, XGBoost.
-- Gestion du déséquilibre : SMOTE, SMOTE-Tomek.
-- Interprétabilité : SHAP values et importance des variables.
-**Déploiement :** API créée avec FastAPI et conteneurisation Docker.
-**Stack :** Python, scikit-learn, XGBoost, FastAPI, Docker, Power BI.
+- Feature engineering basé sur le comportement client (usage des services, facturation, ancienneté).
+- Comparaison de modèles (Régression logistique, Random Forest, XGBoost) avec pipeline ML reproductible.
+- Gestion du déséquilibre des classes avec SMOTE et SMOTE-Tomek.
+- Interprétabilité du modèle via SHAP pour expliquer les facteurs de résiliation.
+- Optimisation du seuil de décision à partir d’une analyse **coût-bénéfice** pour cibler les clients les plus rentables à retenir.
+
+**Déploiement :**
+- API REST développée avec **FastAPI** pour le scoring des clients.
+- Conteneurisation avec **Docker** pour un déploiement reproductible.
+- Tableau de bord interactif pour analyser les risques de churn et simuler des stratégies de rétention.
+
+**Stack :** Python, scikit-learn, XGBoost, SHAP, FastAPI, Docker, Power BI.
 
 ---
 
