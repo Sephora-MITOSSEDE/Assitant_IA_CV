@@ -11,7 +11,7 @@ from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 from src.recherche import rechercher, ResultatRecherche
 
-# ✅ charge .env en local
+# charge .env en local
 RACINE_PROJET = Path(__file__).resolve().parents[1]
 load_dotenv(RACINE_PROJET / ".env")
 
