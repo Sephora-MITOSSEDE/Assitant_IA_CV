@@ -1,16 +1,18 @@
 from __future__ import annotations
 from pathlib import Path
 from langchain_community.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings
+from dotenv import load_dotenv
+load_dotenv()
 # On importe la fonction du fichier précédent
 from src.chargement import preparer_chunks_depuis_markdown
 
 DOSSIER_INDEX = Path("index_faiss")
-# Modèle multilingue pour bien comprendre le français technique (imputation, MICE)
-MODELE_EMBEDDINGS = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+# Modèle multilingue pour bien comprendre le français technique 
+MODELE_EMBEDDINGS = "text-embedding-3-small"
 
-def creer_embeddings() -> HuggingFaceEmbeddings:
-    return HuggingFaceEmbeddings(model_name=MODELE_EMBEDDINGS)
+def creer_embeddings() -> OpenAIEmbeddings:
+    return OpenAIEmbeddings(model=MODELE_EMBEDDINGS)
 
 def generer_index_vectoriel(force: bool = False) -> FAISS:
     """
@@ -39,7 +41,7 @@ def generer_index_vectoriel(force: bool = False) -> FAISS:
     
     # ÉTAPE 3 : Sauvegarder pour ne pas avoir à tout refaire à chaque fois
     index.save_local(str(DOSSIER_INDEX))
-    print(f"✅ Index FAISS sauvegardé avec succès.")
+    print(f"Index FAISS sauvegardé avec succès.")
     return index
 
 if __name__ == "__main__":

@@ -98,6 +98,15 @@ def construire_contexte(passages: List[ResultatRecherche]) -> str:
     return "\n\n---\n\n".join(blocs)
 
 
+@st.cache_resource
+def charger_llm():
+    return ChatOpenAI(
+        model=MODELE_LLM,
+        temperature=0,
+        api_key=OPENAI_API_KEY,
+    )
+
+
 def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
     question_clean = question.strip().lower()
 
@@ -114,10 +123,10 @@ def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
     passages = rechercher(
         requete_recherche,
         k_final=4,
-        candidates_dense=40,
-        candidates_sparse=40,
-        rrf_top_n=30,
-        rerank_top_n=12,
+        candidates_dense=8,
+        candidates_sparse=8,
+        rrf_top_n=10,
+        rerank_top_n=6,
     )
 
 
@@ -133,11 +142,7 @@ def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
             "ou dans Secrets (Streamlit Cloud)."
         )
 
-    llm = ChatOpenAI(
-        model=MODELE_LLM,
-        temperature=0,
-        api_key=OPENAI_API_KEY,
-    )
+    llm = charger_llm()
 
     system_prompt = (
         "Tu es un assistant professionnel qui répond au sujet de Séphora MITOSSEDE.\n"
@@ -163,12 +168,16 @@ def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
         "13) Si l'historique récent éclaire une référence comme \"elle\", \"son\", "
         "\"cette expérience\", \"ce projet\", tu peux t'en servir pour comprendre la question, "
         "mais jamais pour ajouter des faits absents du CONTEXTE."
+        "14) Pour les questions sur le parcours, la formation ou les expériences, "
+        "reconstruis une chronologie cohérente à partir des dates présentes dans le contexte.\n"
+        "15) Ne jamais présenter une ancienne formation comme actuelle si une formation plus récente existe dans le contexte.\n"
+        "16) Si plusieurs formations existent, la plus récente correspond à la situation académique actuelle.\n"
     )
 
     # On garde seulement quelques messages récents
     historique_messages = []
     if historique:
-        derniers_messages = historique[-6:]  # 3 échanges max environ
+        derniers_messages = historique[-4:]  # 3 échanges max environ
         for msg in derniers_messages:
             role = msg.get("role")
             content = msg.get("content", "")
@@ -203,7 +212,7 @@ if __name__ == "__main__":
     tests = [
         "Est-elle en alternance?",
         "Quels sont ses projets principaux ?",
-        "Quelle est son parcour académique?"
+        "Quelle est son parcours académique?"
     ]
     for q in tests:
         print("\n=== QUESTION ===")

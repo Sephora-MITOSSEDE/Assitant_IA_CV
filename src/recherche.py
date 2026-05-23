@@ -13,13 +13,13 @@ from src.rerank import rerank_docs
 
 
 # ---------------------------
-# Réglages (notebook-like)
+# Réglages 
 # ---------------------------
 K_FINAL = 4
-CANDIDATES_DENSE = 40
-CANDIDATES_SPARSE = 40
-RRF_TOP_N = 30
-RERANK_TOP_N = 12
+CANDIDATES_DENSE = 8
+CANDIDATES_SPARSE = 8
+RRF_TOP_N = 10
+RERANK_TOP_N = 6
 RRF_K = 60
 
 
@@ -169,7 +169,7 @@ def rechercher(
     candidats = _rrf_fusion(dense, sparse_idx, all_docs, top_n=rrf_top_n)
     candidats = _prioritize_by_anchors(candidats, _anchors(question))
 
-    # 👉 Rerank (sans répéter la logique, on appelle rerank.py)
+    # Rerank (sans répéter la logique, on appelle rerank.py)
     n = min(rerank_top_n, len(candidats))
     if n > 0:
         order = rerank_docs(question, [d.page_content for d in candidats[:n]])
