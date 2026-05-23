@@ -21,17 +21,27 @@ Disponible à partir de septembre 2026, je suis actuellement à la recherche d�
 - Python
 - R
 - SQL
+- SAS
 
 ### Machine Learning & Statistiques
 - Régression linéaire et logistique
-- Random Forest et XGBoost
-- Algorithmes KNN
+- Random Forest, XGBoost et Gradient Boosting
+- Algorithmes KNN et méthodes de clustering
 - Méthodes de régularisation : LASSO, Ridge, Elastic Net
+- Validation croisée et optimisation d’hyperparamètres
+- Analyse statistique, tests d’hypothèses et A/B Testing
+- Imputation de données : MICE, missForest
+- Évaluation de modèles : RMSE, MAE, F1-score, AUC
+- Interprétabilité des modèles et sélection de variables
 
 ### IA Générative & NLP
-- Frameworks Transformers (Hugging Face)
-- Architecture RAG et Embeddings
-- Bibliothèques spaCy et NLTK
+- Modèles de langage et frameworks Transformers
+- Architecture RAG et assistants conversationnels IA
+- Recherche sémantique, embeddings et bases vectorielles FAISS
+- NLP : prétraitement, similarité textuelle et extraction d’informations
+- Recherche hybride BM25 + dense retrieval
+- Bibliothèques spaCy, NLTK et LangChain
+- Prompt engineering et génération augmentée par contexte
 
 ### Visualisation de données
 - Power BI et Tableau

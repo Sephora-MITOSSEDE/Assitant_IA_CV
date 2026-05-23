@@ -9,14 +9,14 @@ niveau: Master (en cours)
 ## Master Mathématiques Appliquées — Data Science & IA
 **Établissement :** Université de Rennes 2
 **Période :** 2024 – 2026 (en cours)
-**Description :** Spécialisation en statistiques appliquées et intelligence artificielle.
+**Description :** Formation actuelle, en cours, spécialisée en statistiques appliquées, data science et intelligence artificielle.
 
 ---
 
 ## Licence 3 MIASHS — Mathématiques-Économie
 **Établissement :** Université de Bretagne Occidentale (UBO)
 **Période :** 2023 – 2024
-**Description :** Parcours orienté vers les méthodes quantitatives et l'analyse économique.
+**Description :** Formation orientée vers les méthodes quantitatives et l'analyse économique.
 
 ---
 

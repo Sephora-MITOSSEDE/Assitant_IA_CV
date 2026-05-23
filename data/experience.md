@@ -10,8 +10,10 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 ## INSEE — Alternance Data Scientist
 **Période :** 2025 – présent  
 **Missions :**
-- Fiabilisation de données de revenus via un protocole d’évaluation de la stabilité et de la robustesse des imputations (tests statistiques, validation croisée et temporelle).
-- Développement de méthodes d’imputation avancées par Machine Learning (Random Forest, MICE) améliorant la stabilité des prévisions.
+- Optimisation de la méthode d’imputation des revenus en évaluant plusieurs modèles (Random Forest, Gradient Boosting, MICE) par rapport à la méthode existante.
+- Mise en place du modèle d’imputation optimal, permettant une réduction de 24% de l’erreur de prédiction (RMSE) par rapport à la méthode existante.
+- Optimisation des modèles par sélection de variables et régularisation (LASSO, Ridge, Elastic Net).
+- Exploration de données (12M d’individus, plus de 600 variables) pour identifier les variables pertinentes.
 - Optimisation et interprétabilité des modèles par sélection de variables et régularisation (LASSO, Ridge, Elastic Net).
 - Production de reportings décisionnels pour validation méthodologique auprès des équipes métiers.
 
@@ -37,5 +39,6 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 ## BSIC — Stage Gestion des Risques
 **Période :** 2021 – 2022  
 **Missions :**
-- Modélisation des déterminants des créances en souffrance.
-- Identification de profils de solvabilité pour l’optimisation de l’audit financier.
+- Analyse de 1799 dossiers de crédit provenant de 1023 clients répartis dans 13 agences afin d’identifier les facteurs explicatifs du risque de défaut et des créances en souffrance.
+- Construction d’indicateurs de risque crédit (taux de défaut, Montant moyen des crédits en défaut, Part des clients à risque élevé) pour appuyer l’évaluation de solvabilité des emprunteurs.
+- Réalisation d’analyses statistiques et de modèles de scoring crédit (régression logistique) afin de caractériser les profils clients les plus à risque.
