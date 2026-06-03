@@ -15,12 +15,12 @@ from src.rerank import rerank_docs
 # ---------------------------
 # Réglages 
 # ---------------------------
-K_FINAL = 4
-CANDIDATES_DENSE = 8
-CANDIDATES_SPARSE = 8
-RRF_TOP_N = 10
-RERANK_TOP_N = 6
-RRF_K = 10
+K_FINAL = 6
+CANDIDATES_DENSE = 15
+CANDIDATES_SPARSE = 15
+RRF_TOP_N = 20
+RERANK_TOP_N = 0
+RRF_K = 20
 
 
 # ---------------------------
@@ -66,7 +66,7 @@ def _load_index_and_docs() -> Tuple[FAISS, List[Document]]:
     """
     global _INDEX, _DOCS
     if _INDEX is None:
-        _INDEX = generer_index_vectoriel(force=True)
+        _INDEX = generer_index_vectoriel(force=False)
     if _DOCS is None:
         store_dict = _INDEX.docstore._dict  # type: ignore[attr-defined]
         _DOCS = list(store_dict.values())

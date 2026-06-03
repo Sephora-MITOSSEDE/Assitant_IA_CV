@@ -122,10 +122,10 @@ def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
 
     passages = rechercher(
         requete_recherche,
-        k_final=4,
-        candidates_dense=8,
-        candidates_sparse=8,
-        rrf_top_n=10,
+        k_final=6,
+        candidates_dense=15,
+        candidates_sparse=15,
+        rrf_top_n=20,
         rerank_top_n=0,  # Reranking désactivé pour améliorer les performances et réduire le temps de démarrage.
     )
 
