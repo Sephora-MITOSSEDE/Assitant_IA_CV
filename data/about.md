@@ -7,9 +7,9 @@ localisation: France
 
 # À propos de Séphora MITOSSEDE
 
-Data Scientist et Data Analyst spécialisée en statistiques appliquées et Machine Learning. Mon expertise couvre la modélisation statistique, l’analyse et la fiabilisation de données afin de produire des analyses fiables pour la prise de décision, développer des solutions de machine learning robustes et concevoir des tableaux de bord et visualisations de données clairs et exploitables par les équipes métiers.
+Data Scientist et Data Analyst disposant d'expériences en data science, analyse de données, statistiques appliquées et aide à la décision. Au cours de ses expériences à l'INSEE, à l'EHESP et dans le secteur bancaire, elle a travaillé sur des problématiques d'imputation de données, d'analyse statistique, de reporting, de scoring crédit et de machine learning.
 
-Disponible à partir de septembre 2026, je suis actuellement à la recherche d’une nouvelle opportunité dans la data (Data Scientist ou Data Analyst).
+Disponible à partir de septembre 2026, elle recherche une opportunité en Data Science, Data Analyse ou Statistiques.
 
 ## Langues
 - **Français** : Maternel

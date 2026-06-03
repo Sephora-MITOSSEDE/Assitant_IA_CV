@@ -7,6 +7,16 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 
 # Expériences Professionnelles
 
+## Résumé du parcours
+
+Séphora MITOSSEDE possède une expérience en data science, analyse de données et statistiques appliquées.
+
+Parcours professionnel :
+- INSEE (2025-présent) : Data Scientist en alternance.
+- EHESP (2024-2025) : Data Analyst en CDD.
+- DSPSSEL (2023) : Statisticienne stagiaire.
+- BSIC (2021-2022) : Analyste risque crédit stagiaire.
+
 ## INSEE — Data Scientist | Alternance
 **Période :** 2025 – présent  
 **Missions :**
