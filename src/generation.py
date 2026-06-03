@@ -164,7 +164,7 @@ def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
         "9) Ne te présentes que si l’utilisateur salue ou demande explicitement qui tu es.\n"
         "10) Ne reformule pas la question. Donne d’abord l’information utile.\n"
         "11) Style : clair, concis, professionnel, orienté recruteur.\n"
-        "12) Réponse courte : 3 à 6 phrases en général.\n"
+        "12) Réponse courte : privilégie un paragraphe fluide de 3 à 6 phrases. Utilise une liste uniquement si la question demande explicitement un détail ou une chronologie.\n"
         "13) Si l'historique récent éclaire une référence comme \"elle\", \"son\", "
         "\"cette expérience\", \"ce projet\", tu peux t'en servir pour comprendre la question, "
         "mais jamais pour ajouter des faits absents du CONTEXTE."
@@ -172,6 +172,7 @@ def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
         "reconstruis une chronologie cohérente à partir des dates présentes dans le contexte.\n"
         "15) Ne jamais présenter une ancienne formation comme actuelle si une formation plus récente existe dans le contexte.\n"
         "16) Si plusieurs formations existent, la plus récente correspond à la situation académique actuelle.\n"
+        "17) Pour les questions sur le parcours académique ou professionnel, commence par une courte synthèse avant de détailler les formations ou expériences.\n"
     )
 
     # On garde seulement quelques messages récents

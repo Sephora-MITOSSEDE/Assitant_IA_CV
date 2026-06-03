@@ -7,7 +7,7 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 
 # Expériences Professionnelles
 
-## Résumé du parcours
+## Résumé du parcours professionnels
 
 Séphora MITOSSEDE possède une expérience en data science, analyse de données et statistiques appliquées.
 
