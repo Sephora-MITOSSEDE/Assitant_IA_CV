@@ -66,7 +66,7 @@ def _load_index_and_docs() -> Tuple[FAISS, List[Document]]:
     """
     global _INDEX, _DOCS
     if _INDEX is None:
-        _INDEX = generer_index_vectoriel(force=False)
+        _INDEX = generer_index_vectoriel(force=True)
     if _DOCS is None:
         store_dict = _INDEX.docstore._dict  # type: ignore[attr-defined]
         _DOCS = list(store_dict.values())

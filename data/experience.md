@@ -7,7 +7,7 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 
 # Expériences Professionnelles
 
-## INSEE — Alternance Data Scientist
+## INSEE — Data Scientist | Alternance
 **Période :** 2025 – présent  
 **Missions :**
 - Optimisation de la méthode d’imputation des revenus en évaluant plusieurs modèles (Random Forest, Gradient Boosting, MICE) par rapport à la méthode existante.
@@ -19,7 +19,7 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 
 ---
 
-## EHESP — Data Analyst
+## EHESP — Data Analyst | CDD (9 mois)
 **Période :** 2024 – 2025  
 **Missions :**
 - Analyse, préparation et exploitation de données avec Python, R et Excel dans un contexte d’études en santé publique.
@@ -28,7 +28,7 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 
 ---
 
-## DSPSSEL — Statisticienne
+## DSPSSEL — Statisticienne | Stage (3 mois)
 **Période :** 2023  
 **Missions :**
 - Conception et exploitation d’enquêtes statistiques sur la mobilité urbaine et les transports collectifs à Cotonou.
@@ -36,7 +36,7 @@ expertise: Statistiques, Machine Learning, Fiabilisation de données
 
 ---
 
-## BSIC — Stage Gestion des Risques
+## BSIC — Analyste risque crédit | Stage (4 mois)
 **Période :** 2021 – 2022  
 **Missions :**
 - Analyse de 1799 dossiers de crédit provenant de 1023 clients répartis dans 13 agences afin d’identifier les facteurs explicatifs du risque de défaut et des créances en souffrance.
