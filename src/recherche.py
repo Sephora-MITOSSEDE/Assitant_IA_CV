@@ -20,7 +20,7 @@ CANDIDATES_DENSE = 8
 CANDIDATES_SPARSE = 8
 RRF_TOP_N = 10
 RERANK_TOP_N = 6
-RRF_K = 60
+RRF_K = 10
 
 
 # ---------------------------
@@ -170,8 +170,9 @@ def rechercher(
     candidats = _prioritize_by_anchors(candidats, _anchors(question))
 
     # Rerank (sans répéter la logique, on appelle rerank.py)
-    n = min(rerank_top_n, len(candidats))
-    if n > 0:
+   
+    if rerank_top_n > 0:
+        n = min(rerank_top_n, len(candidats))
         order = rerank_docs(question, [d.page_content for d in candidats[:n]])
         candidats = [candidats[i] for i in order] + candidats[n:]
 

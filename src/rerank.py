@@ -5,15 +5,12 @@ from typing import List, Tuple
 
 from sentence_transformers import CrossEncoder
 
-
 MODELE_RERANK = "cross-encoder/ms-marco-MiniLM-L-6-v2"
-
 
 @lru_cache(maxsize=1)
 def get_reranker() -> CrossEncoder:
     """Charge le modèle une seule fois."""
     return CrossEncoder(MODELE_RERANK)
-
 
 def rerank_docs(question: str, passages: List[str]) -> List[int]:
     """

@@ -126,7 +126,7 @@ def generer_reponse(question: str, historique: list[dict] | None = None) -> str:
         candidates_dense=8,
         candidates_sparse=8,
         rrf_top_n=10,
-        rerank_top_n=6,
+        rerank_top_n=0,  # Reranking désactivé pour améliorer les performances et réduire le temps de démarrage.
     )
 
 

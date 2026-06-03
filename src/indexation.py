@@ -46,4 +46,4 @@ def generer_index_vectoriel(force: bool = False) -> FAISS:
 
 if __name__ == "__main__":
     # Commande pour créer l'index la première fois
-    generer_index_vectoriel(force=True)
+    generer_index_vectoriel(force=False)
